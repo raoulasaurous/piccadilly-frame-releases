@@ -12,10 +12,14 @@ Each release contains:
 | File | Purpose |
 |---|---|
 | `piccadilly-frame.apk` | The app |
-| `update.json` | Its version and checksum — frames verify both before installing |
+| `update.json` | The app's version and checksum. Frames verify both before installing |
+| `page.zip` | The board's page |
+| `page.json` | The page's version, checksum and signature. Frames verify all three before switching to the page |
 
 Frames install an update only if it is signed with the same key as the app
 already on them, so only releases published here by the author will install.
+A new page is also checked on the frame. If it does not work, the frame goes
+back to the page it had before.
 
 ## License
 
